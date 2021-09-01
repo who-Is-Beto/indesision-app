@@ -1,27 +1,33 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <div id="app">
+    <Indesicion />
+  </div>
 </template>
 
 <script lang="ts">
-import { Options, Vue } from "vue-class-component";
-import HelloWorld from "./components/HelloWorld.vue";
-
-@Options({
+import Indesicion from "./components/Indesicion.vue";
+export default {
+  name: "App",
   components: {
-    HelloWorld,
+    Indesicion,
   },
-})
-export default class App extends Vue {}
+};
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  height: 100vh;
+  width: 100vw;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 </style>
