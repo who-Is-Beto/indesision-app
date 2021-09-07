@@ -38,10 +38,10 @@ export default {
     };
   },
   methods: {
-    async getAnswer(event: string): Promise<void> {
+    getAnswer(event: string): void {
       this.question = event;
       if (event.endsWith("?")) {
-        this.answer = await fetch("https://yesno.wtf/api").then((response) =>
+        this.answer = fetch("https://yesno.wtf/api").then((response) =>
           response.json()
         );
       }
@@ -76,7 +76,6 @@ input {
   padding: 10px 15px;
   border-radius: 5px;
   border: none;
-  margin-bottom: 2rem;
 }
 input:focus {
   outline: none;
