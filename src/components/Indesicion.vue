@@ -15,7 +15,7 @@
         <h2>
           {{ question }}
         </h2>
-        <h1 v-show="answer.answer && question">
+        <h1 v-show="answer.answer">
           {{ answer.answer }}
         </h1>
       </div>
@@ -38,10 +38,10 @@ export default {
     };
   },
   methods: {
-    getAnswer(event: string): void {
+    async getAnswer(event: string): Promise<void> {
       this.question = event;
       if (event.endsWith("?")) {
-        this.answer = fetch("https://yesno.wtf/api").then((response) =>
+        this.answer = await fetch("https://yesno.wtf/api").then((response) =>
           response.json()
         );
       }
@@ -84,7 +84,7 @@ input:focus {
 p {
   color: white;
   font-size: 20px;
-  margin-top: 0px;
+  margin-top: 16px;
 }
 
 h1,
